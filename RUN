@@ -1,0 +1,18 @@
+#! /bin/sh
+
+HOST=$(hostname -I | cut -d " " -f1)
+touch run/AlexaClientSDKConfig.json
+docker run \
+	--name alexa \
+	--mount type=bind,source=$PWD/run/database,target=/alexa/database \
+	--mount type=bind,source=$PWD/run/config.json,target=/alexa/source/avs-device-sdk/tools/Install/config.json \
+	--mount type=bind,source=$PWD/run/AlexaClientSDKConfig.json,target=/alexa/config/AlexaClientSDKConfig.json \
+	--mount type=bind,source=$PWD/run/AlexaScreenConfig.json,target=/alexa/config/AlexaScreenConfig.json \
+	--mount type=bind,source=$PWD/run/GUI,target=/alexa/GUI \
+	--mount type=bind,source=/dev/snd,target=/dev/snd \
+	--network host \
+	--env HOST="${HOST}" \
+	--rm \
+	--privileged \
+	-it \
+	alexa /alexa/run.sh
