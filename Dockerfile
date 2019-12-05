@@ -16,7 +16,7 @@ RUN cd source ; git clone --depth 1 https://github.com/aanon4/avs-device-sdk.git
 RUN cd third-party ; git clone --depth 1 https://github.com/xianyi/OpenBLAS.git ; git clone --depth 1 https://github.com/Kitt-AI/snowboy.git
 
 # Need to compile this locally - official package segvs
-RUN cd third-party/OpenBLAS ; make -j4 ONLY_CBLAS=1 NOFORTRAN=1 NO_LAPACK=1 NUM_THREADS=4 ; make install
+RUN cd third-party/OpenBLAS ; make -j4 TARGET=CORE2 ONLY_CBLAS=1 NOFORTRAN=1 NO_LAPACK=1 NUM_THREADS=4 ; make install
 
 RUN cd source/sdk-build ; cmake ../avs-device-sdk \
 	-DGSTREAMER_MEDIA_PLAYER=ON \
