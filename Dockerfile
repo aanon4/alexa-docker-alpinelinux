@@ -53,3 +53,15 @@ RUN cd source/ss-build; cmake ../alexa-smart-screen-sdk \
 	-DCMAKE_BUILD_TYPE=DEBUG ; make -j4
 
 RUN cp third-party/snowboy/resources/alexa/alexa_02092017.umdl third-party/snowboy/resources/alexa.umdl
+
+# Websocket
+EXPOSE 8933/tcp
+
+VOLUME /alexa/database
+VOLUME /alexa/GUI
+VOLUME /alexa/source/avs-device-sdk/tools/Install/config.json
+VOLUME /alexa/config/AlexaClientSDKConfig.json
+VOLUME /alexa/config/AlexaScreenConfig.json
+VOLUME /dev/snd
+
+CMD /alexa/run.sh
