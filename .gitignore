@@ -2,5 +2,7 @@
 ._.DS_Store
 .vscode
 run/database/*.db
-run/GUI
+run/GUI/*.html
+run/GUI/*.js
+run/GUI/*.png
 run/AlexaClientSDKConfig.json
