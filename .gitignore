@@ -1,6 +1,6 @@
 .DS_Store
 ._.DS_Store
 .vscode
-run/database
+run/database/*.db
 run/GUI
 run/AlexaClientSDKConfig.json
