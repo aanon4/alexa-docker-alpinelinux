@@ -25,7 +25,7 @@ There are various bind which are important for successful operation:
 > Binds to an empty directory where various SQLite databases are created. Without this, everytime
 the application is restarted, it will have to reauthenticate with the Alexa Voice Service.
 
-* **/alexa/config/** 
+* **/alexa/config** 
 > Binds to a directory holding your configuation. If these configuration files don't exists, they will be
 created on first-run. You can then edit them.
 
