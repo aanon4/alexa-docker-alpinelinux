@@ -56,9 +56,8 @@ EXPOSE 8933/tcp
 
 VOLUME /alexa/database
 VOLUME /alexa/GUI
-VOLUME /alexa/source/avs-device-sdk/tools/Install/config.json
-VOLUME /alexa/config/AlexaClientSDKConfig.json
-VOLUME /alexa/config/AlexaScreenConfig.json
+VOLUME /alexa/config
+VOLUME /alexa/config
 VOLUME /dev/snd
 
 CMD /alexa/run.sh

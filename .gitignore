@@ -5,4 +5,4 @@ run/database/*.db
 run/GUI/*.html
 run/GUI/*.js
 run/GUI/*.png
-run/AlexaClientSDKConfig.json
+run/config/*.json
