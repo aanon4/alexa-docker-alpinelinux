@@ -1,6 +1,6 @@
 #! /bin/sh
 
-HOST=$(hostname -I | cut -d " " -f1)
+HOSTIP=$(hostname -I | cut -d " " -f1)
 docker run \
 	--name alexa \
 	--mount type=bind,source=$PWD/run/database,target=/alexa/database \
@@ -8,7 +8,7 @@ docker run \
 	--mount type=bind,source=$PWD/run/GUI,target=/alexa/GUI \
 	--mount type=bind,source=/dev/snd,target=/dev/snd \
 	--network host \
-	--env HOST="${HOST}" \
+	--env HOSTIP="${HOSTIP}" \
 	--rm \
 	--privileged \
 	-it \
