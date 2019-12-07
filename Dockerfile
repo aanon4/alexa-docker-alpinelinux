@@ -9,6 +9,7 @@ COPY root/ /
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories ; echo "http://dl-cdn.alpinelinux.org/alpine/v3.9/community" >> /etc/apk/repositories
 RUN apk add bash git build-base cmake make openssl gstreamer-dev gst-plugins-base-dev gst-plugins-good gst-plugins-bad gst-plugins-ugly sqlite-dev alsa-lib-dev curl-dev python perl portaudio-dev bluez-alsa nodejs npm asio-dev=1.12.2-r0
 
+# Use some forked version of official packages which container minor tweaks to compile on Alpine Linux
 RUN cd source ; git clone --depth 1 https://github.com/aanon4/avs-device-sdk.git ; git clone --depth 1 https://github.com/aanon4/alexa-smart-screen-sdk.git ; git clone --depth 1 https://github.com/alexa/apl-core-library.git
 RUN cd third-party ; git clone --depth 1 https://github.com/xianyi/OpenBLAS.git ; git clone --depth 1 https://github.com/Kitt-AI/snowboy.git
 
