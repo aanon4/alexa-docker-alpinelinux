@@ -14,7 +14,8 @@ docker run --name alexa
     --mount type=bind,source=$PWD/run/config,target=/alexa/config
     --mount type=bind,source=$PWD/run/GUI,target=/alexa/GUI
     --mount type=bind,source=/dev/snd,target=/dev/snd
-    --network host \
+    --network host
+		--env HOSTIP="..."
     --privileged \
     alexa /alexa/run.sh
 ~~~~
@@ -25,7 +26,7 @@ There are various bind which are important for successful operation:
 > Binds to an empty directory where various SQLite databases are created. Without this, everytime
 the application is restarted, it will have to reauthenticate with the Alexa Voice Service.
 
-* **/alexa/config/** 
+* **/alexa/config/**
 > Binds to a directory holding your configuation. If these configuration files don't exists, they will be
 created on first-run. You can then edit them.
 
