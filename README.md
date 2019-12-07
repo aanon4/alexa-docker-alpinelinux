@@ -15,7 +15,7 @@ docker run --name alexa
     --mount type=bind,source=$PWD/run/GUI,target=/alexa/GUI
     --mount type=bind,source=/dev/snd,target=/dev/snd
     --network host
-		--env HOSTIP="..."
+    --env HOSTIP="..."
     --privileged \
     alexa /alexa/run.sh
 ~~~~
