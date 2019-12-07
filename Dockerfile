@@ -57,7 +57,6 @@ EXPOSE 8933/tcp
 VOLUME /alexa/database
 VOLUME /alexa/GUI
 VOLUME /alexa/config
-VOLUME /alexa/config
 VOLUME /dev/snd
 
 CMD /alexa/run.sh
