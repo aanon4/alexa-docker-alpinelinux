@@ -20,7 +20,7 @@ docker run --name alexa
     alexa /alexa/run.sh
 ~~~~
 
-There are various bind which are important for successful operation:
+There are various binds which are important for successful operation:
 
 * **/alexa/database**
 > Binds to an empty directory where various SQLite databases are created. Without this, everytime
@@ -36,6 +36,20 @@ to display the smart screen in a browser.
 
 * **/dev/snd**
 > Binds to the sound device on the host, provides microphone and speaker access for Alexa.
+
+### Notes
+
+#### Network
+
+Tested using *host* networking. The server attaches to all networks by default - simple but not terribly secure. The actual host ip is passed via the *HOSTIP* environment and is used to modify the Javascript loaded by the web browser.
+
+#### Sound
+
+Sound is provided using the hosts */dev/snd* devices, and is configured in the container's */etc/asound.conf* file. By default, sound is played and captured using hardware device 1. This can be changed by binding an alternative configuration to this filename.
+
+## Authentication
+
+...
 
 ## See Also
 
