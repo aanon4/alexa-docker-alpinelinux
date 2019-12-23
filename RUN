@@ -12,4 +12,4 @@ docker run \
 	--rm \
 	--privileged \
 	-it \
-	alexa /alexa/run.sh
+	alexa

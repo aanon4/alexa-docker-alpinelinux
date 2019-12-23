@@ -60,4 +60,4 @@ VOLUME /alexa/GUI
 VOLUME /alexa/config
 VOLUME /dev/snd
 
-CMD /alexa/run.sh
+ENTRYPOINT ["/alexa/run.sh"]
